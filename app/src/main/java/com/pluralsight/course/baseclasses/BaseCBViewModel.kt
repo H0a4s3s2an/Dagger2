@@ -3,9 +3,6 @@ package com.pluralsight.course.baseclasses
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-/**
- * @author aggarwalpulkit596
- */
 abstract class BaseCBViewModel : ViewModel() {
     var errorLiveData: MutableLiveData<String> = MutableLiveData()
 
