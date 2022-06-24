@@ -2,6 +2,7 @@ package com.pluralsight.course.di
 
 import android.util.Log
 import com.pluralsight.course.abstractions.CacheSource
+import javax.inject.Inject
 
 /*
 Inversion Of Control
@@ -11,8 +12,10 @@ objects’ life cycle. It is the principle behind the Dependency Inversion (DIP)
 SOLID Principles.
 */
 
-class LoginManager(val localStore: CacheSource, val apiService: ApiService) {
-	fun print() {
-		Log.d(LoginManager::class.simpleName, apiService.username + " " + apiService.password)
+class LoginManager @Inject constructor(val localStore: LocalStore, val apiService: ApiService) {
+	fun login(username: String, password: String) {
+		Log.d("LoginManager","login($username , $password)")
+		val token = apiService.authenticate(username, password)
+		localStore.saveToken(token)
 	}
 }

@@ -3,9 +3,6 @@ package com.pluralsight.course.baseclasses
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 
-/**
- * Created by championswimmer on 2020-02-02.
- */
 abstract class BaseCBFragment : Fragment(), BaseLifecycleComponent {
     override val thisLifecycleOwner: LifecycleOwner get() = this
 
