@@ -7,9 +7,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
 import com.pluralsight.course.BuildConfig
 
-/**
- * Created by championswimmer on 2020-02-02.
- */
 interface BaseLifecycleComponent : LifecycleObserver {
     fun log(msg: String) {
         if (BuildConfig.DEBUG) {
