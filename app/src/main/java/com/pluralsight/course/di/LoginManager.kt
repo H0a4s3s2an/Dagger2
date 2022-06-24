@@ -1,5 +1,6 @@
 package com.pluralsight.course.di
 
+import android.util.Log
 import com.pluralsight.course.abstractions.CacheSource
 
 /*
@@ -10,6 +11,8 @@ objects’ life cycle. It is the principle behind the Dependency Inversion (DIP)
 SOLID Principles.
 */
 
-class LoginManager(localStore: CacheSource, apiService: ApiService) {
-
+class LoginManager(val localStore: CacheSource, val apiService: ApiService) {
+	fun print() {
+		Log.d(LoginManager::class.simpleName, apiService.username + " " + apiService.password)
+	}
 }
